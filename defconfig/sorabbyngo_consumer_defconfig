@@ -1,0 +1,51 @@
+# Sorabbyngo Byngo OS — Consumer Device Kernel Configuration Fragment
+# Target: phones, tablets, laptops, earbuds, smartwatches
+
+# ARM64 — primary mobile target
+BR2_aarch64=y
+
+# Android Runtime compatibility
+CONFIG_ANDROID=y
+CONFIG_ANDROID_BINDER_IPC=y
+CONFIG_ANDROID_BINDERFS=y
+CONFIG_ASHMEM=y
+CONFIG_SYNC_FILE=y
+CONFIG_ION=y
+
+# Biometric — continuous identity
+CONFIG_INPUT_FINGERPRINT=y
+CONFIG_HID_SENSOR_HUB=y
+CONFIG_IIO=y
+
+# Audio — voice-first
+CONFIG_SOUND=y
+CONFIG_SND=y
+CONFIG_SND_USB_AUDIO=y
+CONFIG_SND_SOC=y
+
+# Display
+CONFIG_DRM=y
+CONFIG_DRM_PANEL=y
+CONFIG_BACKLIGHT_CLASS_DEVICE=y
+
+# Wireless
+CONFIG_WIRELESS=y
+CONFIG_CFG80211=y
+CONFIG_MAC80211=y
+CONFIG_BT=y
+CONFIG_BT_LE=y
+
+# Power management — battery life
+CONFIG_PM=y
+CONFIG_PM_SLEEP=y
+CONFIG_SUSPEND=y
+CONFIG_CPU_FREQ=y
+CONFIG_CPU_FREQ_GOV_SCHEDUTIL=y
+
+# Camera
+CONFIG_VIDEO_V4L2=y
+CONFIG_VIDEOBUF2_CORE=y
+
+# Sorabbyngo modules
+CONFIG_SORABBYNGO_NODEID=m
+CONFIG_BYNGONET_IDENTITY=m

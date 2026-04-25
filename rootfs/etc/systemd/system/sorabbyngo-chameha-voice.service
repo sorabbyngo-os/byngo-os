@@ -1,0 +1,19 @@
+[Unit]
+Description=Sorabbyngo Chameha — Voice-First Interface
+After=sound.target sorabbyngo-nats.service
+Wants=sorabbyngo-nats.service
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/sorabbyngo/byngo-os.conf
+ExecStart=/usr/bin/python3 /opt/sorabbyngo/chameha/main.py
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+# Run on tty1 — voice is PID 1 on screen
+TTYPath=/dev/tty1
+StandardInput=tty
+
+[Install]
+WantedBy=graphical.target
