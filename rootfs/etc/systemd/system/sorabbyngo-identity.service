@@ -1,0 +1,13 @@
+[Unit]
+Description=Sorabbyngo NodeID Identity Service
+DefaultDependencies=no
+After=local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/opt/sorabbyngo/bin/nodeid-init --mode=consumer
+StandardOutput=journal
+
+[Install]
+WantedBy=sysinit.target

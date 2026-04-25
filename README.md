@@ -1,67 +1,87 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sorabbyngo-Labs/.github/main/assets/sorabbyngo-logo.jpg" alt="Sorabbyngo" width="480"/>
+  <img src="./assets/banner.svg" alt="Byngo OS" width="800"/>
 </p>
+
+---
+
+The consumer surface of SORABBYNGO OS. Byngo OS powers phones, tablets, laptops, earbuds, and smartwatches across Africa. The AI is the interface — not an app you open.
+
+---
+
+## Boot sequence
+
+```mermaid
+graph TD
+    BOOT["GRUB / U-Boot"] --> KERNEL["Linux 6.x-sorabbyngo-consumer\nARM64 · Android binder · biometric drivers"]
+    KERNEL --> SYSINIT["sorabbyngo-identity.service\nNodeID hardware seal"]
+    SYSINIT --> OLLAMA["ollama.service\nphi4-mini · aya23:8b warm"]
+    OLLAMA --> CHAMEHA["chameha-voice.service\nVoice shell — primary interface"]
+    CHAMEHA --> BYNGOX["byngox-consumer.service\nIntent computing engine"]
+    BYNGOX --> TARGET["byngo.target\nOS ready"]
+```
+
+---
+
+## What makes it different
+
+| Feature | How |
+|---|---|
+| Voice-first boot | Chameha boots to voice shell — no lock screen |
+| No passwords | Continuous biometric — fingerprint + face |
+| Intent computing | Say what you want, not which app to open |
+| Android apps | ART runtime — existing Android APKs run |
+| 40+ languages | Aya 23 — Swahili, Hausa, Yoruba, Amharic, Igbo + more |
+| Offline AI | Phi-4 Mini always running — no cloud dependency |
+| Mesh-native | Every device is a Byngonet node |
+
+---
+
+## Services
+
+| Service | Role |
+|---|---|
+| `chameha-voice.service` | Primary voice shell — always listening |
+| `byngox-consumer.service` | Intent engine — health, context, recommendation agents |
+| `sorabbyngo-identity.service` | NodeID hardware seal at boot |
+| `byngo.target` | Consumer OS target — boots to voice shell |
+
+---
+
+## Target devices
+
+| Device | Arch | Status |
+|---|---|---|
+| Android phones | ARM64 | In development |
+| Tablets | ARM64 | Planned |
+| Laptops | x86_64 | Planned |
+| Earbuds | ARM32 | Planned |
+| Smartwatches | ARM64 | Planned |
+
+---
+
+## Build
+
+```bash
+# Requires sorabbyngo-os kernel source
+export KERNEL_SRC=~/sorabbyngo-os
+bash scripts/build.sh
+```
+
+---
+
+## Part of SORABBYNGO OS
+
+| OS Surface | Role |
+|---|---|
+| **Byngo OS** | Consumer devices — this repo |
+| [Novela OS](https://github.com/sorabbyngo-Labs/novela-os) | Medical equipment |
+| [Edge OS](https://github.com/sorabbyngo-Labs/edge-os) | IoT, drones, vehicles |
+| [Server OS](https://github.com/sorabbyngo-Labs/server-os) | Infrastructure |
+| [Sorabbyngo OS](https://github.com/sorabbyngo-Labs/sorabbyngo-os) | Kernel source |
+
+---
 
 <p align="center">
-  <strong>Byngo OS — Consumer Device Operating System</strong>
+  <strong>Sorabbyngo Company</strong> &nbsp;·&nbsp; Kisii, Kenya &nbsp;·&nbsp; 2026<br/>
+  <em>Rhythm of Digital Life</em>
 </p>
-
-<p align="center">
-  Built on Sorabbyngo AI Kernel · Android Compatible · Africa-native · Voice-first
-</p>
-
----
-
-## What this is
-
-Byngo OS is the consumer surface of the Sorabbyngo AI Kernel. It powers phones, tablets, laptops, earbuds, and smartwatches across Africa.
-
-The first OS where the AI is the interface — not an app you open.
-
----
-
-## Key Features
-
-| Feature | Implementation |
-|---|---|
-| Voice-first boot | Chameha boots directly to voice shell |
-| Android compatibility | ART runtime — existing Android apps run |
-| African languages | 40+ languages via Aya 23 |
-| No passwords | Continuous biometric identity |
-| Offline AI | Tier 1 always running — Phi-4 Mini |
-| Intent computing | No apps — users express goals |
-
----
-
-## Relationship to Sorabbyngo Kernel
-sorabbyngo-os (kernel source)
-└── configs/sorabbyngo_consumer_defconfig
-└── byngo-os (this repo — rootfs + ART + Chameha)
-
----
-
-## Target Devices
-
-| Device | Status |
-|---|---|
-| Android phones (ARM64) | Planned |
-| Tablets | Planned |
-| Laptops (x86_64) | Planned |
-| Earbuds (ARM32) | Planned |
-| Smartwatches | Planned |
-
----
-
-## Related Repositories
-
-| Repo | Role |
-|---|---|
-| [sorabbyngo-os](https://github.com/sorabbyngo-Labs/sorabbyngo-os) | Kernel source |
-| [chameha](https://github.com/sorabbyngo-Labs/chameha) | Voice personality engine |
-| [byngox](https://github.com/sorabbyngo-Labs/byngox) | AI reasoning engine |
-| [byngonet](https://github.com/sorabbyngo-Labs/byngonet) | Device mesh network |
-
----
-
-**Sorabbyngo Company** · Kisii, Kenya · 2026
-*Rhythm of Digital Life*

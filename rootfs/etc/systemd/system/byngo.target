@@ -1,0 +1,8 @@
+[Unit]
+Description=Byngo OS — Consumer Target
+Requires=graphical.target
+After=graphical.target chameha-voice.service byngox-consumer.service
+Documentation=https://github.com/sorabbyngo-Labs/byngo-os
+
+[Install]
+WantedBy=graphical.target

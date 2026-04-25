@@ -1,0 +1,19 @@
+[Unit]
+Description=Chameha Voice Interface — Byngo OS primary shell
+After=network.target byngonet.service sorabbyngo-identity.service
+Wants=byngonet.service
+
+[Service]
+Type=simple
+ExecStart=/opt/sorabbyngo/bin/chameha --mode=voice --lang=auto --tier=1
+Restart=always
+RestartSec=3
+User=sorabbyngo
+Environment=OLLAMA_URL=http://localhost:11434
+Environment=TIER1_CHAT_MODEL=phi4-mini
+Environment=TIER1_LANG_MODEL=aya23:8b
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=graphical.target
