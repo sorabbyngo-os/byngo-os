@@ -1,0 +1,10 @@
+NAME="Byngo OS"
+VERSION="1.0.0"
+ID=byngo
+ID_LIKE=sorabbyngo
+PRETTY_NAME="Byngo OS 1.0.0 (Consumer)"
+HOME_URL="https://github.com/sorabbyngo-Labs/byngo-os"
+SUPPORT_URL="https://github.com/sorabbyngo-Labs/byngonet"
+BUILD_ID=byngo-1.0.0
+VARIANT="Consumer Device"
+VARIANT_ID=consumer
