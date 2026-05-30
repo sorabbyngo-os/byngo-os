@@ -74,10 +74,10 @@ bash scripts/build.sh
 | OS Surface | Role |
 |---|---|
 | **Byngo OS** | Consumer devices — this repo |
-| [Novela OS](https://github.com/sorabbyngo-Labs/novela-os) | Medical equipment |
-| [Edge OS](https://github.com/sorabbyngo-Labs/edge-os) | IoT, drones, vehicles |
-| [Server OS](https://github.com/sorabbyngo-Labs/server-os) | Infrastructure |
-| [Sorabbyngo OS](https://github.com/sorabbyngo-Labs/sorabbyngo-os) | Kernel source |
+| [Novela OS](https://github.com/sorabbyngo-os/novela-os) | Medical equipment |
+| [Edge OS](https://github.com/sorabbyngo-os/edge-os) | IoT, drones, vehicles |
+| [Server OS](https://github.com/sorabbyngo-os/server-os) | Infrastructure |
+| [Sorabbyngo OS](https://github.com/sorabbyngo-os/sorabbyngo-os) | Kernel source |
 
 ---
 
